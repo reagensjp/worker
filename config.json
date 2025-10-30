@@ -1,33 +1,51 @@
 {
-  "inbounds": [
+  "inbounds": [],
+  "outbounds": [
     {
-      "port": 8080,
+      "mux": {
+        "enabled": false
+      },
       "protocol": "vless",
       "settings": {
-        "decryption": "none",
-        "clients": [
+        "vnext": [
           {
-            "id": "94b807c7-0130-4de7-887c-cd7d5108a0c2"
-          },
-          {
-            "id": "07b807c7-0130-4de7-887c-cd7d5108a0c2"
-          },
-          {
-            "id": "08b807c7-0130-4de7-887c-cd7d5108a0c2"
-          },
-          {
-            "id": "00b807c7-0130-4de7-887c-cd7d5108a0c1"
+            "address": "ghs-vip-any-c260.ghs-ssl.googlehosted.com",
+            "port": 443,
+            "users": [
+              {
+                "encryption": "none",
+                "id": "e2c33983-cb91-498d-813f-b76a9a83cd67",
+                "level": 8
+              }
+            ]
           }
         ]
       },
       "streamSettings": {
-        "network": "ws"
-      }
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": true,
+          "serverName": "gfront.dev-fenix.online"
+        },
+        "wsSettings": {
+          "headers": {
+            "Host": "gfront.dev-fenix.online"
+          },
+          "path": "/"
+        }
+      },
+      "tag": "VLESS"
     }
   ],
-  "outbounds": [
-    {
-      "protocol": "freedom"
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 4,
+        "uplinkOnly": 1
+      }
     }
-  ]
+  }
 }
