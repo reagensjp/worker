@@ -8,8 +8,8 @@ async function handleRequest(request) {
   const url = new URL(request.url)
 
   // Cambia esto por la IP o dominio de tu VPS
-  url.hostname = "holisprite.es"
-  url.protocol = "https:"
+  url.hostname = "ny.reagensvps.site"
+  url.protocol = "ws:"
   url.port = "443"
 
   return fetch(url.toString(), {
