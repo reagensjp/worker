@@ -9,7 +9,7 @@ async function handleRequest(request) {
 
   // Cambia esto por la IP o dominio de tu VPS
   url.hostname = "ny.reagensvps.site"
-  url.protocol = "ws:"
+  url.protocol = "https:"
   url.port = "443"
 
   return fetch(url.toString(), {
